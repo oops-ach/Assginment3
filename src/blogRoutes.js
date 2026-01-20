@@ -4,10 +4,7 @@ const Blog = require("./Blog");
 
 const router = express.Router();
 
-/**
- * POST /blogs
- * Create blog
- */
+//POST blogs and create a blog
 router.post("/", async (req, res) => {
   try {
     const { title, body, author } = req.body;
@@ -25,10 +22,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-/**
- * GET /blogs
- * Get all blogs
- */
+// GET /blogs Get all blogs
 router.get("/", async (req, res) => {
   try {
     const blogs = await Blog.find().sort({ createdAt: -1 });
@@ -38,9 +32,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-/**
- * GET /blogs/:id
- */
+// GET /blogs/:id
 router.get("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -61,9 +53,8 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-/**
- * PUT /blogs/:id
- */
+//PUT /blogs/:id
+
 router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -95,9 +86,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-/**
- * DELETE /blogs/:id
- */
+// DELETE /blogs/:id
 router.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;
