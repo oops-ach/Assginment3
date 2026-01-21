@@ -1,0 +1,248 @@
+:root {
+    --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #0b1020;
+    color: #e8eeff;
+    min-height: 100vh;
+}
+
+header {
+    padding: 28px 18px 10px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 0 0 6px;
+    font-size: 22px;
+}
+
+.sub {
+    color: #93a4c7;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 14px;
+}
+
+@media (max-width: 980px) {
+    .wrap {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    background: rgba(18, 26, 51, .86);
+    border: 1px solid rgba(255, 255, 255, .10);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+    border-radius: 14px;
+    padding: 14px;
+    backdrop-filter: blur(8px);
+}
+
+.row {
+    display: grid;
+    gap: 10px;
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.grid3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+@media (max-width: 560px) {
+
+    .grid2,
+    .grid3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+label {
+    font-size: 12px;
+    color: #93a4c7;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px 11px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, .10);
+    background: rgba(9, 13, 28, .65);
+    color: #e8eeff;
+    outline: none;
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: rgba(147, 164, 199, .65);
+}
+
+.btns {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+button {
+    border: 1px solid rgba(255, 255, 255, .10);
+    background: #2a3b78;
+    color: #e8eeff;
+    padding: 10px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+button:hover {
+    filter: brightness(1.08);
+}
+
+button:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+}
+
+.danger {
+    background: #98200b;
+}
+
+.ghost {
+    background: rgba(9, 13, 28, .55);
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    padding: 6px 10px;
+    border: 1px solid rgba(255, 255, 255, .10);
+    border-radius: 999px;
+    color: #93a4c7;
+    background: rgba(9, 13, 28, .45);
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: #ffd43b;
+}
+
+.dot.ok {
+    background: #20c997;
+}
+
+.dot.bad {
+    background: #ff6b6b;
+}
+
+.toolbar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.list {
+    display: grid;
+    gap: 10px;
+}
+
+.item {
+    border: 1px solid rgba(255, 255, 255, .10);
+    background: rgba(9, 13, 28, .55);
+    border-radius: 14px;
+    padding: 12px;
+    display: grid;
+    gap: 8px;
+}
+
+.item-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.title {
+    font-weight: 800;
+}
+
+.meta {
+    color: #93a4c7;
+    font-size: 12px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.mono {
+    font-size: 12px;
+    color: rgba(232, 238, 255, .85);
+}
+
+.small {
+    font-size: 12px;
+    color: #93a4c7;
+}
+
+.item-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.log {
+    display: none;
+    margin-top: 10px;
+    border: 1px solid rgba(255, 255, 255, .10);
+    background: rgba(0, 0, 0, .20);
+    border-radius: 14px;
+    padding: 10px;
+    font-size: 12px;
+    max-height: 210px;
+    overflow: auto;
+    white-space: pre-wrap;
+}
+
+.kbd {
+    font-size: 11px;
+    padding: 2px 6px;
+    border: 1px solid rgba(255, 255, 255, .10);
+    border-radius: 8px;
+    background: rgba(9, 13, 28, .55);
+    color: rgba(232, 238, 255, .85);
+}

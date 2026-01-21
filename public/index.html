@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Blog CRUD UI</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Blog CRUD UI</h1>
+        <div class="sub">
+            <span class="kbd">POST /blogs</span>,
+            <span class="kbd">GET /blogs</span>,
+            <span class="kbd">GET /blogs/:id</span>,
+            <span class="kbd">PUT /blogs/:id</span>,
+            <span class="kbd">DELETE /blogs/:id</span>.
+        </div>
+    </header>
+
+    <main class="wrap">
+        <!-- left side -->
+        <section class="card">
+            <div class="toolbar">
+                <div class="pill" title="API">
+                    <span id="statusDot" class="dot"></span>
+                    <span id="statusText"></span>
+                </div>
+
+                <div class="grid2" style="min-width: 280px;">
+                    <div class="row">
+                        <label>API Base URL</label>
+                        <input id="baseUrl" placeholder="http://localhost:3000" value="http://localhost:3000" />
+                    </div>
+                    <div class="row">
+                        <label>&nbsp;</label>
+                        <button id="btnPing" class="ghost">Ping /</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="border:none;border-top:1px solid var(--border); margin: 10px 0;">
+
+            <h3 style="margin: 6px 0 10px; font-size: 15px;">Create / Update</h3>
+
+            <div class="row">
+                <div class="row">
+                    <label>Blog ID (for GET/PUT/DELETE)</label>
+                    <input id="blogId" placeholder="ID" />
+                </div>
+
+                <div class="grid2">
+                    <div class="row">
+                        <label>Title</label>
+                        <input id="title" placeholder="Post title" />
+                    </div>
+                    <div class="row">
+                        <label>Author</label>
+                        <input id="author" placeholder="Author's name" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label>Body *</label>
+                    <textarea id="body" placeholder="Post content..."></textarea>
+                </div>
+
+                <div class="btns">
+                    <button id="btnCreate">POST /blogs (Create)</button>
+                    <button id="btnUpdate">PUT /blogs/:id (Update)</button>
+                    <button id="btnGetOne" class="ghost">GET /blogs/:id</button>
+                    <button id="btnDelete" class="danger">DELETE /blogs/:id</button>
+                </div>
+
+                <div class="log" id="log"></div>
+            </div>
+        </section>
+
+        <!-- right side -->
+        <section class="card">
+            <div class="toolbar">
+                <div>
+                    <h3 style="margin: 0 0 4px; font-size: 15px;">Blogs</h3>
+                </div>
+
+                <div class="btns">
+                    <button id="btnRefresh">GET /blogs (Refresh)</button>
+                    <button id="btnClear" class="ghost">Clear form</button>
+                </div>
+            </div>
+
+            <div id="list" class="list"></div>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

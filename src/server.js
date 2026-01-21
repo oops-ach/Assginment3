@@ -7,6 +7,10 @@ const app = express();
 
 app.use(express.json());
 
+const path = require("path");
+app.use(express.static(path.join(__dirname, "..", "public")));
+
+
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
