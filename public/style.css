@@ -1,6 +1,3 @@
-:root {
-    --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-}
 
 * {
     box-sizing: border-box;
@@ -79,10 +76,6 @@ h1 {
     }
 }
 
-label {
-    font-size: 12px;
-    color: #93a4c7;
-}
 
 input,
 textarea,
@@ -101,10 +94,7 @@ textarea {
     resize: vertical;
 }
 
-input::placeholder,
-textarea::placeholder {
-    color: rgba(147, 164, 199, .65);
-}
+
 
 .btns {
     display: flex;
@@ -123,14 +113,6 @@ button {
     font-size: 13px;
 }
 
-button:hover {
-    filter: brightness(1.08);
-}
-
-button:disabled {
-    opacity: .55;
-    cursor: not-allowed;
-}
 
 .danger {
     background: #98200b;
@@ -139,17 +121,15 @@ button:disabled {
 .ghost {
     background: rgba(9, 13, 28, .55);
 }
-
+#btnPing {
+    display:none;
+}
 .pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 12px;
-    padding: 6px 10px;
-    border: 1px solid rgba(255, 255, 255, .10);
-    border-radius: 999px;
-    color: #93a4c7;
-    background: rgba(9, 13, 28, .45);
+    display:none;
+}
+
+#baseUrl {
+    display: none;
 }
 
 .dot {

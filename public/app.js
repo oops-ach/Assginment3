@@ -62,8 +62,6 @@ function renderList(blogs) {
     listEl.innerHTML = "";
     if (!Array.isArray(blogs) || blogs.length === 0) {
         listEl.innerHTML = `<div class="item">
-          <div class="title">Постов нет</div>
-          <div class="small">Сделай POST /blogs, потом Refresh.</div>
         </div>`;
         return;
     }
@@ -93,7 +91,7 @@ function renderList(blogs) {
 
           <div class="item-actions">
             <button class="ghost" data-act="select" data-id="${id}">Select</button>
-            <button class="ghost" data-act="fill" data-id="${id}">Load into form</button>
+
             <button class="danger" data-act="delete" data-id="${id}">Delete</button>
           </div>
         `;
@@ -109,18 +107,6 @@ function renderList(blogs) {
                 log("Selected ID", { _id: blogId });
             }
 
-            if (act === "fill") {
-                try {
-                    const one = await request(`/blogs/${blogId}`, { method: "GET" });
-                    blogIdEl.value = blogId;
-                    titleEl.value = one.title ?? "";
-                    bodyEl.value = one.body ?? "";
-                    authorEl.value = one.author ?? "";
-                    log("Loaded blog into form", one);
-                } catch (err) {
-                    log(`Load failed (${err.status || "?"})`, err.data || err.message);
-                }
-            }
 
             if (act === "delete") {
                 if (!confirm("Удалить этот пост?")) return;
