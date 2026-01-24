@@ -1,8 +1,6 @@
 const $ = (id) => document.getElementById(id);
 
 const baseUrlEl = $("baseUrl");
-const statusDot = $("statusDot");
-const statusText = $("statusText");
 const logEl = $("log");
 
 const blogIdEl = $("blogId");
@@ -109,7 +107,7 @@ function renderList(blogs) {
 
 
             if (act === "delete") {
-                if (!confirm("Удалить этот пост?")) return;
+                if (!confirm("Delete this post?")) return;
                 try {
                     const out = await request(`/blogs/${blogId}`, { method: "DELETE" });
                     log("Deleted", out);
